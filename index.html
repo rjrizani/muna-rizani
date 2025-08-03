@@ -740,9 +740,11 @@
         <!-- Konfirmasi Kehadiran -->
         <div class="confirmation">
             <h2 class="confirmation-title">Konfirmasi Kehadiran</h2>
-            <p>Mohon konfirmasikan kehadiran Anda melalui form berikut. Data akan dikirimkan ke WhatsApp panitia.</p>
+            <p>Mohon konfirmasikan kehadiran Anda melalui form berikut. Data akan dikirimkan ke email panitia.</p>
             
-            <form class="confirmation-form" id="attendanceForm">
+            <form class="confirmation-form" id="attendanceForm" name="wedding-rsvp" method="POST" data-netlify="true" action="/success.html">
+                <input type="hidden" name="form-name" value="wedding-rsvp" />
+                
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
                     <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap">
@@ -776,7 +778,7 @@
                 </div>
                 
                 <button type="submit" class="submit-btn">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i> Konfirmasi via WhatsApp
+                    <i class="fas fa-envelope whatsapp-icon"></i> Kirim Konfirmasi
                 </button>
             </form>
         </div>
@@ -867,54 +869,8 @@
             // Konfirmasi kehadiran form
             const attendanceForm = document.getElementById('attendanceForm');
             
-            attendanceForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Ambil nilai dari form
-                const name = document.getElementById('name').value;
-                const attendance = document.getElementById('attendance').value;
-                const guestCount = document.getElementById('guestCount').value;
-                const message = document.getElementById('message').value;
-                
-                // Validasi form
-                if(!name || !attendance || !guestCount) {
-                    alert('Mohon isi semua kolom yang wajib diisi');
-                    return;
-                }
-                
-                // Format pesan untuk WhatsApp
-                const attendanceText = {
-                    'hadir': 'Akan Hadir',
-                    'mungkin': 'Mungkin Hadir',
-                    'tidak': 'Tidak Hadir'
-                }[attendance];
-                
-                let whatsappMessage = `Assalamu'alaikum. Berikut konfirmasi kehadiran untuk pernikahan Munasiyah & Ahmad Rigani:\n\n`;
-                whatsappMessage += `Nama: ${name}\n`;
-                whatsappMessage += `Kehadiran: ${attendanceText}\n`;
-                whatsappMessage += `Jumlah Tamu: ${guestCount} orang\n`;
-                
-                if(message) {
-                    whatsappMessage += `Pesan: ${message}\n\n`;
-                }
-                
-                whatsappMessage += `Terima kasih.`;
-                
-                // Encode pesan untuk URL
-                const encodedMessage = encodeURIComponent(whatsappMessage);
-                
-                // Nomor WhatsApp panitia (bisa diubah sesuai kebutuhan)
-                const phoneNumber = '6285391107591'; // Contoh nomor
-                
-                // Buat tautan WhatsApp
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                // Buka WhatsApp
-                window.open(whatsappUrl, '_blank');
-                
-                // Reset form setelah pengiriman
-                attendanceForm.reset();
-            });
+            // Form will be handled by Netlify Forms automatically
+            // No additional JavaScript needed for form submission
         });
     </script>
 </body>
