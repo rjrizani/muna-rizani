@@ -1,0 +1,16 @@
+{
+  "name": "wedding-invitation",
+  "version": "1.0.0",
+  "description": "Wedding invitation website for Munasiyah & Ahmad Rigani",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build completed - static files ready for deployment'",
+    "start": "echo 'Static HTML project - open index.html in browser'",
+    "dev": "echo 'Static HTML project - open index.html in browser'"
+  },
+  "keywords": ["wedding", "invitation", "static"],
+  "author": "Wedding Couple",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
