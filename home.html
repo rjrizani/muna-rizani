@@ -1,13 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan - Munasirah & Ahmad Rizani</title>
-    <meta name="description" content="Undangan pernikahan Munasirah & Ahmad Rizani. Konfirmasi kehadiran via WhatsApp dan temukan lokasi acara dengan mudah.">
-    <meta name="keywords" content="undangan pernikahan, Munasirah, Ahmad Rizani, konfirmasi kehadiran, WhatsApp, lokasi acara, Babulu, PPU">
+    <meta name="description"
+        content="Undangan pernikahan Munasirah & Ahmad Rizani. Konfirmasi kehadiran via WhatsApp dan temukan lokasi acara dengan mudah.">
+    <meta name="keywords"
+        content="undangan pernikahan, Munasirah, Ahmad Rizani, konfirmasi kehadiran, WhatsApp, lokasi acara, Babulu, PPU">
     <meta property="og:title" content="Undangan Pernikahan - Munasirah & Ahmad Rizani">
     <meta property="og:description" content="pernikahan Munasirah & Ahmad Rizani.">
     <meta property="og:type" content="website">
@@ -15,7 +16,8 @@
     <meta property="og:image" content="denah.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Undangan Pernikahan - Munasirah & Ahmad Rizani">
-    <meta name="twitter:description" content="Konfirmasi kehadiran via WhatsApp dan lihat lokasi pernikahan Munasirah & Ahmad Rizani.">
+    <meta name="twitter:description"
+        content="Konfirmasi kehadiran via WhatsApp dan lihat lokasi pernikahan Munasirah & Ahmad Rizani.">
     <meta name="twitter:image" content="https://yourdomain.com/cover.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,39 +167,22 @@
 
                 </div>
 
-                <div class="map-grid">
-                    <div class="map-item">
-                        <i class="fas fa-school map-icon"></i>
-                        <div><strong>SDN 12 BABULU</strong><br>Capura - Perbatasan PPU</div>
-                    </div>
-                    <div class="map-item">
-                        <i class="fas fa-road map-icon"></i>
-                        <div><strong>Jl. Provinsi</strong><br>Lokasi Acara - Pinggir Jalan</div>
-                    </div>
-                    <div class="map-item">
-                        <i class="fas fa-road map-icon"></i>
-                        <div><strong>Jl. Salak</strong></div>
-                    </div>
-                    <div class="map-item">
-                        <i class="fas fa-mosque map-icon"></i>
-                        <div><strong>Masjid Nurussalam</strong></div>
-                    </div>
-                </div>
+      
             </div>
         </div>
 
         <!-- Konfirmasi Kehadiran -->
         <div class="confirmation">
-            <h2 class="confirmation-title">Konfirmasi Kehadiran</h2>
-            <p>Mohon konfirmasikan kehadiran Anda melalui form berikut.</p>
+            <h2 class="confirmation-title">Kirim doa dan Ucapan</h2>
 
-<div class="responsive-iframe-container">
-    <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfXmKfzAnutxGB2NMVFU4kkEGNruN1KzOe4jZgAJrXR76R0Bg/viewform?embedded=true"
-        style="width: 100%; max-width: 640px; height: 593px; border: none; margin: 0 auto; display: block;">
-        Memuat…
-    </iframe>
-</div>
+
+            <div class="responsive-iframe-container">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfXmKfzAnutxGB2NMVFU4kkEGNruN1KzOe4jZgAJrXR76R0Bg/viewform?embedded=true"
+                    style="width: 100%; max-width: 640px; height: 593px; border: none; margin: 0 auto; display: block;">
+                    Memuat…
+                </iframe>
+            </div>
         </div>
     </div>
 
@@ -218,6 +203,13 @@
             Kel. Besar Helmansyah & Inam
         </div>
     </div>
+
+   
+        <!-- audio -->
+        <audio id="backgroundMusic" loop autoplay>
+            <source src="message.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
     <script>
@@ -336,6 +328,24 @@
                 attendanceForm.reset();
             });
         });
+
+        const audio = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+
+        // Fungsi untuk memutar atau menghentikan audio
+        function toggleAudio() {
+            if (!isPlaying) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                }).catch(error => {
+                    console.log("Autoplay was prevented. User needs to interact with the document first.");
+                });
+            }
+        }
+
+        // Panggil fungsi saat ada interaksi pertama dari pengguna
+        document.addEventListener('click', toggleAudio, { once: true });
+        document.addEventListener('scroll', toggleAudio, { once: true });
     </script>
 </body>
 

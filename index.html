@@ -395,39 +395,44 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(0deg);
             }
+
             25% {
                 transform: translate(30px, -20px) rotate(90deg);
             }
+
             50% {
                 transform: translate(0, -40px) rotate(180deg);
             }
+
             75% {
                 transform: translate(-30px, -20px) rotate(270deg);
             }
         }
 
         /* Responsive Design */
-        
+
         /* Large Desktop (1440px and up) */
         @media (min-width: 1440px) {
             .content {
                 max-width: 32rem;
             }
-            
+
             .couple-names h1 {
                 font-size: 4rem;
             }
-            
+
             .open-invitation-btn {
                 font-size: 1.4rem;
                 padding: 1.2rem 3rem;
                 min-width: 280px;
                 max-width: 350px;
             }
-            
+
             .button-click-area {
                 top: -30px;
                 left: -30px;
@@ -441,7 +446,7 @@
             .couple-names h1 {
                 font-size: 3.8rem;
             }
-            
+
             .open-invitation-btn {
                 font-size: 1.3rem;
                 padding: 1.1rem 2.8rem;
@@ -483,7 +488,7 @@
                 font-size: 1.1rem;
                 min-width: 200px;
             }
-            
+
             .button-click-area {
                 top: -20px;
                 left: -20px;
@@ -507,7 +512,7 @@
                 font-size: 1rem;
                 min-width: 180px;
             }
-            
+
             .button-container {
                 max-width: 280px;
             }
@@ -518,7 +523,7 @@
             .button-click-area:hover {
                 background-color: rgba(162, 175, 155, 0.08);
             }
-            
+
             .open-invitation-btn:hover {
                 transform: translateY(-5px) scale(1.05);
                 box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.25);
@@ -533,7 +538,7 @@
                 right: -35px;
                 bottom: -35px;
             }
-            
+
             .open-invitation-btn:active {
                 transform: scale(0.98);
                 background-color: #7a8773;
@@ -561,39 +566,72 @@
         <div class="content">
             <!-- Couple Names -->
             <div class="couple-names">
-            <h1 style="font-size: clamp(2rem, 5vw, 4rem);">Muna & Rizani</h1>
-            <div class="divider"></div>
-            <p style="font-size: clamp(0.75rem, 1.5vw, 0.875rem);">THE WEDDING</p>
+                <h1 style="font-size: clamp(2rem, 5vw, 4rem);">Muna & Rizani</h1>
+                <div class="divider"></div>
+                <p style="font-size: clamp(0.75rem, 1.5vw, 0.875rem);">THE WEDDING</p>
             </div>
 
             <!-- Wedding Date -->
             <div class="wedding-date">
-            <p style="font-size: clamp(1rem, 2vw, 1.125rem);">Sabtu, 06 September 2025</p>
-            <p style="font-size: clamp(0.875rem, 1.8vw, 1rem);">Pukul 09.00 WITA</p>
+                <p style="font-size: clamp(1rem, 2vw, 1.125rem);">Sabtu, 06 September 2025</p>
+
             </div>
 
             <!-- Floral Divider -->
             <div class="floral-divider">
-            <div class="floral-icon">
-                <div class="petal petal-1"></div>
-                <div class="petal petal-2"></div>
-                <div class="petal petal-3"></div>
-                <div class="petal petal-4"></div>
-                <div class="petal petal-5"></div>
-                <div class="petal petal-6"></div>
-                <div class="petal petal-7"></div>
-                <div class="petal petal-8"></div>
+                <div class="floral-icon">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="petal petal-7"></div>
+                    <div class="petal petal-8"></div>
+                </div>
             </div>
+
+            <div>
+                <p style="font-size: clamp(0.875rem, 1.8vw, 1rem);">Kepada Bapak/Ibu yang kami hormati
+                </p>
             </div>
+            <br>
+            <p class="nama-tamu" id="namaTamu" style="
+                font-family: 'Playfair Display', serif;
+                font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+                color: var(--sage);
+                margin: 1rem 0;
+                padding: 0.5rem 1.5rem;
+                border: 1px solid var(--sage);
+                border-radius: 8px;
+                display: inline-block;
+                background-color: rgba(255, 255, 255, 0.5);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                letter-spacing: 1px;
+                font-weight: 500;
+                animation: fadeIn 1.5s ease-out;">nama-tamu</p>
+
+            <style>
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
 
             <!-- Opening Button -->
             <div class="button-container">
-            <div class="button-click-area" id="buttonClickArea"></div>
-            <button class="open-invitation-btn" id="openBtn" tabindex="0" role="button" 
-                style="font-size: clamp(1rem, 2vw, 1.4rem);"
-                aria-label="Buka undangan pernikahan Muna dan Rizani">
-                BUKA UNDANGAN
-            </button>
+                <div class="button-click-area" id="buttonClickArea"></div>
+                <button class="open-invitation-btn" id="openBtn" tabindex="0" role="button"
+                    style="font-size: clamp(1rem, 2vw, 1.4rem);" aria-label="Buka undangan pernikahan Muna dan Rizani">
+                    BUKA UNDANGAN
+                </button>
             </div>
         </div>
 
@@ -610,33 +648,35 @@
                 <div class="petal petal-8"></div>
             </div>
         </div>
+
+
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const openBtn = document.getElementById('openBtn');
             const buttonClickArea = document.getElementById('buttonClickArea');
-            
+
             // Fungsi untuk handle pembukaan undangan
             function openInvitation() {
                 try {
                     // Hapus event listener untuk mencegah double click
                     openBtn.removeEventListener('click', openInvitation);
                     buttonClickArea.removeEventListener('click', openInvitation);
-                    
+
                     // Animasi tombol
                     openBtn.style.transform = 'scale(0.95)';
                     openBtn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
                     openBtn.style.pointerEvents = 'none';
                     buttonClickArea.style.pointerEvents = 'none';
-                    
+
                     // Animasi halaman
                     document.body.style.overflow = 'hidden';
                     const container = document.querySelector('.container');
                     container.style.opacity = '0';
                     container.style.transform = 'translateY(20px)';
                     container.style.transition = 'all 0.8s ease';
-                    
+
                     // Redirect setelah animasi
                     setTimeout(() => {
                         window.location.href = 'home.html';
@@ -644,7 +684,7 @@
                 } catch (error) {
                     console.error('Error:', error);
                     alert('Terjadi kesalahan. Silakan coba lagi.');
-                    
+
                     // Restore event listeners jika error
                     openBtn.addEventListener('click', openInvitation);
                     buttonClickArea.addEventListener('click', openInvitation);
@@ -652,13 +692,13 @@
                     buttonClickArea.style.pointerEvents = 'auto';
                 }
             }
-            
+
             // Pasang event listener ke tombol
             openBtn.addEventListener('click', openInvitation);
-            
+
             // Pasang event listener ke area klik yang lebih luas
             buttonClickArea.addEventListener('click', openInvitation);
-            
+
             // Support keyboard navigation
             openBtn.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -676,12 +716,12 @@
 
             // Feedback visual untuk touch devices
             let touchTimer;
-            buttonClickArea.addEventListener('touchstart', function() {
+            buttonClickArea.addEventListener('touchstart', function () {
                 clearTimeout(touchTimer);
                 this.style.backgroundColor = 'rgba(162, 175, 155, 0.15)';
             });
 
-            buttonClickArea.addEventListener('touchend', function() {
+            buttonClickArea.addEventListener('touchend', function () {
                 const self = this;
                 touchTimer = setTimeout(() => {
                     self.style.backgroundColor = 'transparent';
@@ -694,6 +734,30 @@
             link.href = 'home.html';
             document.head.appendChild(link);
         });
+
+
+        // Fungsi untuk mengisi nama tamu// Ambil URL saat ini
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Ambil nilai dari parameter 'to'
+        // Misalnya, jika URL-nya adalah undangan.html?to=Budi
+        const nama = urlParams.get('to');
+
+        // Ambil elemen HTML tempat nama akan ditampilkan
+        const namaTamuElement = document.getElementById('namaTamu');
+
+        // Periksa apakah nama ada
+        if (nama) {
+            // Jika ada, masukkan nama ke dalam elemen HTML
+            namaTamuElement.textContent = nama;
+        } else {
+            // Jika tidak ada, tampilkan pesan default
+            namaTamuElement.textContent = "   ";
+        }
+
+     
+
+    
     </script>
 </body>
 
