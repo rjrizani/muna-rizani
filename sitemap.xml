@@ -1,43 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<weddingInvitation>
-  <title>Undangan Pernikahan - Munasirah &amp; Ahmad Rizani</title>
-  <description>Undangan pernikahan Munasirah &amp; Ahmad Rizani. Temukan lokasi acara dengan mudah.</description>
-  <date>2025-09-06</date>
-  <location>
-    <venue>Lapangan Sekolah Dasar Negeri 012 Babulu</venue>
-    <address>Jl. Provinsi KM 58 Desa Rintik, Kec. Babulu, Kabupaten Penajam Paser Utara</address>
-    <mapsUrl>https://maps.app.goo.gl/eL98HXZJhMjcXuf76</mapsUrl>
-  </location>
-  <couple>
-    <bride>
-      <name>Munasirah, S.Si.</name>
-      <parents>Bapak Lapu &amp; Ibu Hasniah</parents>
-      <order>Putri Keempat</order>
-    </bride>
-    <groom>
-      <name>Ahmad Rizani, M.Sc.</name>
-      <parents>Bapak Helmansyah &amp; Ibu Inam</parents>
-      <order>Putra Pertama</order>
-    </groom>
-  </couple>
-  <events>
-    <event>
-      <type>Akad Nikah</type>
-      <time>09:00 WITA</time>
-    </event>
-    <event>
-      <type>Resepsi</type>
-      <time>11.00-15.00 WITA</time>
-    </event>
-  </events>
-  <confirmation>
-    <formUrl>https://docs.google.com/forms/d/e/1FAIpQLSfXmKfzAnutxGB2NMVFU4kkEGNruN1KzOe4jZgAJrXR76R0Bg/viewform</formUrl>
-  </confirmation>
-  <ayat>
-    Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya kamu mengingat kebesaran Allah. (QS. Az-Zariyat: 49)
-  </ayat>
-  <families>
-    <family>Kel. Besar Lapu &amp; Hasniah</family>
-    <family>Kel. Besar Helmansyah &amp; Inam</family>
-  </families>
-</weddingInvitation>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://undanganyuk.site/</loc>
+    <lastmod>2025-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://undanganyuk.site/index.html</loc>
+    <lastmod>2025-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://undanganyuk.site/home.html</loc>
+    <lastmod>2025-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Tambahkan halaman lain jika ada -->
+</urlset>
