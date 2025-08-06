@@ -2,6 +2,16 @@
 <html lang="id">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TQ5PX6MW');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muna & Rizani Wedding</title>
@@ -548,6 +558,10 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ5PX6MW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="container">
         <!-- Background Elements -->
         <div class="bg-elements">
@@ -648,6 +662,11 @@
                 <div class="petal petal-8"></div>
             </div>
         </div>
+
+        <audio id="indexMusic" autoplay>
+            <source src="wedding-music-329295.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
 
 
     </div>
@@ -755,9 +774,27 @@
             namaTamuElement.textContent = "   ";
         }
 
-     
+        //autoplay audio
+        const audio = document.getElementById('indexMusic');
+        audio.volume = 0.5; // Atur volume awal
+        audio.loop = true; // Atur audio untuk loop
 
-    
+        window.addEventListener('load', () => {
+
+            audio.play().catch(error => {
+                console.log('Autoplay diblokir, menunggu interaksi pengguna.');
+            });
+            // Tambahkan event listener untuk interaksi pengguna
+            document.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play().catch(error => {
+                        console.error('Gagal memulai audio:', error);
+                    });
+                }
+            });
+        });
+
+
     </script>
 </body>
 

@@ -206,7 +206,7 @@
 
    
         <!-- audio -->
-        <audio id="backgroundMusic" loop autoplay>
+        <audio id="backgroundMusic" autoplay>
             <source src="message.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -276,57 +276,6 @@
                 observer.observe(el);
             });
 
-            // Konfirmasi kehadiran form
-            const attendanceForm = document.getElementById('attendanceForm');
-
-            attendanceForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Ambil nilai dari form
-                const name = document.getElementById('name').value;
-                const attendance = document.getElementById('attendance').value;
-                const guestCount = document.getElementById('guestCount').value;
-                const message = document.getElementById('message').value;
-
-                // Validasi form
-                if (!name || !attendance || !guestCount) {
-                    alert('Mohon isi semua kolom yang wajib diisi');
-                    return;
-                }
-
-                // Format pesan untuk WhatsApp
-                const attendanceText = {
-                    'hadir': 'Akan Hadir',
-                    'mungkin': 'Mungkin Hadir',
-                    'tidak': 'Tidak Hadir'
-                }[attendance];
-
-                let whatsappMessage = `Assalamu'alaikum. Berikut konfirmasi kehadiran untuk pernikahan Munasirah & Ahmad Rizani:\n\n`;
-                whatsappMessage += `Nama: ${name}\n`;
-                whatsappMessage += `Kehadiran: ${attendanceText}\n`;
-                whatsappMessage += `Jumlah Tamu: ${guestCount} orang\n`;
-
-                if (message) {
-                    whatsappMessage += `Pesan: ${message}\n\n`;
-                }
-
-                whatsappMessage += `Terima kasih.`;
-
-                // Encode pesan untuk URL
-                const encodedMessage = encodeURIComponent(whatsappMessage);
-
-                // Nomor WhatsApp panitia (bisa diubah sesuai kebutuhan)
-                const phoneNumber = '6285391107591'; // Contoh nomor
-
-                // Buat tautan WhatsApp
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Buka WhatsApp
-                window.open(whatsappUrl, '_blank');
-
-                // Reset form setelah pengiriman
-                attendanceForm.reset();
-            });
         });
 
         const audio = document.getElementById('backgroundMusic');
