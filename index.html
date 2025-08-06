@@ -788,18 +788,28 @@
         audio.volume = 0.5; // Atur volume awal
         audio.loop = true; // Atur audio untuk loop
 
-        window.addEventListener('load', () => {
-
+        // Fungsi untuk memutar atau menghentikan audio
+        function toggleAudio() {
+            if (audio.paused) {
             audio.play().catch(error => {
-                console.log('Autoplay diblokir, menunggu interaksi pengguna.');
+                console.error('Gagal memulai audio:', error); 
             });
-            // Tambahkan event listener untuk interaksi pengguna
+            } else {
+            audio.pause();
+            }
+        }
+
+        window.addEventListener('load', () => {
+            audio.play().catch(error => {
+            console.log('Autoplay diblokir, menunggu interaksi pengguna.');
+            });
+            // Tambahkan event listener untuk interaksi pengguna  
             document.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play().catch(error => {
-                        console.error('Gagal memulai audio:', error);
-                    });
-                }
+            if (audio.paused) {
+                audio.play().catch(error => {
+                console.error('Gagal memulai audio:', error);
+                });
+            }
             });
         });
 
